@@ -3,10 +3,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6C631C75-BC19-45CD-9A1F-94E0CE37470E}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <RootNamespace>RealWordChecker</RootNamespace>
-    <AssemblyName>RealWordChecker</AssemblyName>
+    <ProjectGuid>{87670175-EF80-4860-A2D3-2175DB3AA900}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>RealWordChecker.Harness</RootNamespace>
+    <AssemblyName>RealWordChecker.Harness</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -16,6 +16,7 @@
     <OutputPath>bin\Debug</OutputPath>
     <DefineConstants>DEBUG</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
+    <ExternalConsole>true</ExternalConsole>
     <PlatformTarget></PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -23,6 +24,7 @@
     <OutputPath>bin\Release</OutputPath>
     <DefineConstants></DefineConstants>
     <ErrorReport>prompt</ErrorReport>
+    <ExternalConsole>true</ExternalConsole>
     <GenerateTailCalls>true</GenerateTailCalls>
     <PlatformTarget></PlatformTarget>
   </PropertyGroup>
@@ -41,13 +43,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssemblyInfo.fs" />
-    <Compile Include="WordChecker.fs" />
-    <Compile Include="Script.fsx" />
+    <Compile Include="Program.fs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="english-words">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
+    <ProjectReference Include="..\RealWordChecker\RealWordChecker.fsproj">
+      <Project>{6C631C75-BC19-45CD-9A1F-94E0CE37470E}</Project>
+      <Name>RealWordChecker</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(FSharpTargetsPath)" />
 </Project>

@@ -53,10 +53,15 @@
   <ItemGroup>
     <Compile Include="AssemblyInfo.fs" />
     <Compile Include="WordTests.fs" />
-    <Compile Include="Script.fsx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RealWordChecker\RealWordChecker.fsproj">
+      <Project>{6C631C75-BC19-45CD-9A1F-94E0CE37470E}</Project>
+      <Name>RealWordChecker</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(FSharpTargetsPath)" />
 </Project>
